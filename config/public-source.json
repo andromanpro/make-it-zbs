@@ -13,7 +13,7 @@
   ],
   "directories": [
     ".github", "src", "ui", "integrations/vscode", "test", "lib/net472", "vendor",
-    "docs/manual-smoke/samples"
+    "docs/manual-smoke/samples", "libraries/onescript-windows"
   ],
   "tools": [
     "build-dist.py", "build-release.py", "build-onescript.py", "build-vscode.py",

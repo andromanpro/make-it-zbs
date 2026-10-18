@@ -227,13 +227,13 @@ def main():
         if args.installed_root:
             summary["installed_root"] = str(args.installed_root.resolve())
         if not args.ui_only:
-            summary["unit"] = execute_tests(stage, output, env, "unit", UNIT_FILTER, args.coverage, minimum=379)
+            summary["unit"] = execute_tests(stage, output, env, "unit", UNIT_FILTER, args.coverage, minimum=380)
         if not args.unit_only:
             # WinForms caches process-wide DPI data. UIA tests run in a fresh
             # testhost, not before cold-form unit tests in the same process.
             summary["ui"] = execute_tests(stage, output, env, "ui", selected_ui_filter(args), args.coverage,
                                           merge=args.coverage and not args.ui_only,
-                                          minimum=1 if args.filter else 23 + int(args.word) + int(args.paint) + int(args.live_image) + 2 * int(args.live_codex) + 6 * int(args.p0_pipeline),
+                                          minimum=1 if args.filter else 25 + int(args.word) + int(args.paint) + int(args.live_image) + 2 * int(args.live_codex) + 6 * int(args.p0_pipeline),
                                           timeout=ui_timeout(args))
         summary["unit_enabled"] = not args.ui_only
         summary["desktop_ui_enabled"] = not args.unit_only

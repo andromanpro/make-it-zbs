@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETFramework,Version=v4.7.2": {
+      "MakeItZBS.OneScript": {
+        "type": "Direct",
+        "requested": "[1.9.4-zbs.1, )",
+        "resolved": "1.9.4-zbs.1",
+        "contentHash": "1gw5tGeUQOWEv03taobII0hpVJJcGHfX1gkhhNNCeAu8DDB/Y0yr7dVtrkP81fmZkTHzeDv+HP9YL61Y2fIPzw==",
+        "dependencies": {
+          "MakeItZBS.OneScript.Language": "1.9.4-zbs.1"
+        }
+      },
+      "Microsoft.NETFramework.ReferenceAssemblies": {
+        "type": "Direct",
+        "requested": "[1.0.3, )",
+        "resolved": "1.0.3",
+        "contentHash": "vUc9Npcs14QsyOD01tnv/m8sQUnGTGOw1BCmKcv77LBJY7OxhJ+zJF7UD/sCL3lYNFuqmQEVlkfS4Quif6FyYg==",
+        "dependencies": {
+          "Microsoft.NETFramework.ReferenceAssemblies.net472": "1.0.3"
+        }
+      },
+      "MakeItZBS.OneScript.Language": {
+        "type": "Transitive",
+        "resolved": "1.9.4-zbs.1",
+        "contentHash": "pYuureL4b0j5aTf5l9PsCf52qg1uyoHSjnNMekCu70lAYvwgSPIvm+pcQsxHrvaWEmgvqhMq6u8olP7SI0RB0A=="
+      },
+      "Microsoft.NETFramework.ReferenceAssemblies.net472": {
+        "type": "Transitive",
+        "resolved": "1.0.3",
+        "contentHash": "0E7evZXHXaDYYiLRfpyXvCh+yzM2rNTyuZDI+ZO7UUqSc6GfjePiXTdqJGtgIKUwdI81tzQKmaWprnUiPj9hAw=="
+      }
+    }
+  }
+}

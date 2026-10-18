@@ -339,6 +339,9 @@
       "makeitzbs.processhost": {
         "type": "Project"
       },
+      "onescript.windows": {
+        "type": "Project"
+      },
       "zbswindowscomponent": {
         "type": "Project",
         "dependencies": {

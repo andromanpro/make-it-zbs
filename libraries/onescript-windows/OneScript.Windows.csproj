@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>OneScript.Windows</AssemblyName>
+    <RootNamespace>OneScript.Windows</RootNamespace>
+    <Version>0.1.0-beta.1</Version>
+    <Authors>andromanpro</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <DeterministicSourcePaths>true</DeterministicSourcePaths>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <CoreSourceRoot Condition="Exists('$(MSBuildProjectDirectory)/core/NativeMethods.cs')">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/core'))</CoreSourceRoot>
+    <CoreSourceRoot Condition="'$(CoreSourceRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../src/ZBSWindowsComponent'))</CoreSourceRoot>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1903;NU1904</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <PackageReference Include="MakeItZBS.OneScript" Version="1.9.4-zbs.1" PrivateAssets="all" ExcludeAssets="runtime" />
+    <Compile Include="Windows*.cs" />
+    <Compile Include="$(CoreSourceRoot)/ClipboardDispatcher.cs" Link="core/ClipboardDispatcher.cs" />
+    <Compile Include="$(CoreSourceRoot)/NativeClipboardSnapshot.cs" Link="core/NativeClipboardSnapshot.cs" />
+    <Compile Include="$(CoreSourceRoot)/NativeMethods.cs" Link="core/NativeMethods.cs" />
+  </ItemGroup>
+  <Target Name="MapIndependentWindowsSources" BeforeTargets="InitializeSourceRootMappedPaths"
+          DependsOnTargets="_InitializeSourceRootMappedPathsFromSourceControl">
+    <ItemGroup>
+      <!-- Two stable roots serve both compiler PathMap and coverage source resolution. -->
+      <SourceRoot Remove="@(SourceRoot)" />
+      <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash('$(MSBuildProjectDirectory)'))" />
+      <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash('$(CoreSourceRoot)'))" />
+    </ItemGroup>
+  </Target>
+</Project>

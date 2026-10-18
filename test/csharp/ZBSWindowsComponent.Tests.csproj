@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../../src/ZBSWindowsComponent/ZBSWindowsComponent.csproj" />
+    <ProjectReference Include="../../libraries/onescript-windows/OneScript.Windows.csproj" />
     <ProjectReference Include="../fake-codex/FakeCodex.csproj" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.IO.Compression" />
@@ -38,5 +39,6 @@
     <Compile Include="../ui/PaintUiTests.cs" Link="PaintUiTests.cs" Condition="'$(IncludeDesktopUiTests)' == 'true'" />
     <Compile Include="../ui/ClipboardTestScope.cs" Link="ClipboardTestScope.cs" Condition="'$(IncludeDesktopUiTests)' == 'true'" />
     <Compile Include="../ui/ResultFallbackUiTests.cs" Link="ResultFallbackUiTests.cs" Condition="'$(IncludeDesktopUiTests)' == 'true'" />
+    <Compile Include="../ui/WindowsLibraryUiTests.cs" Link="WindowsLibraryUiTests.cs" Condition="'$(IncludeDesktopUiTests)' == 'true'" />
   </ItemGroup>
 </Project>

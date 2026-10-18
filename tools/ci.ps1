@@ -7,6 +7,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
+$pythonSources = "tools,libraries/onescript-windows"
 Set-Location $root
 if (($RunWordSmoke -or $RunPaintSmoke) -and -not $RunUiTests) {
     throw "Word/Paint checks require -RunUiTests and an interactive desktop."
@@ -41,7 +42,7 @@ Invoke-Checked {
 } "Python test dependencies"
 Invoke-Checked { Invoke-Python -m coverage erase } "Python coverage reset"
 Invoke-Checked {
-    Invoke-Python -m coverage run --branch --source=tools -m unittest discover `
+    Invoke-Python -m coverage run --branch --source=$pythonSources -m unittest discover `
         -s test/python -p "test_*.py"
 } "Python tests"
 New-Item -ItemType Directory -Path artifacts/coverage/python -Force | Out-Null
@@ -53,17 +54,17 @@ Invoke-Checked {
     if (-not $RunUiTests) { $uiArguments += "--unit-only" }
     if ($RunWordSmoke) { $uiArguments += "--word" }
     if ($RunPaintSmoke) { $uiArguments += "--paint" }
-    Invoke-Python -m coverage run --branch --source=tools --parallel-mode tools/run-ui-tests.py --coverage @uiArguments
+    Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode tools/run-ui-tests.py --coverage @uiArguments
 } "C# tests"
 
 Invoke-Checked {
-    Invoke-Python -m coverage run --branch --source=tools --parallel-mode tools/run-onescript-tests.py --runtime $runtimeRoot.Trim()
+    Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode tools/run-onescript-tests.py --runtime $runtimeRoot.Trim()
 } "OneScript tests"
 Invoke-Checked {
     dotnet build -c Release src/ZBSWindowsComponent/ZBSWindowsComponent.csproj --no-incremental
 } "C# Release build"
 Invoke-Checked {
-    Invoke-Python -m coverage run --branch --source=tools --parallel-mode tools/check-reproducible.py
+    Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode tools/check-reproducible.py
 } "Release reproducibility across commit identities"
 Invoke-Checked {
     dotnet build -c Release src/Launcher/MakeItZBS.Launcher.csproj --no-incremental
@@ -74,8 +75,13 @@ Invoke-Checked { Invoke-Python tools/collect-licenses.py --check } "Runtime lice
 $hash = Invoke-Checked {
     $hashArguments = @('--write-hash')
     if ($VerifyReleaseDll) { $hashArguments += '--verify-shipped' }
-    Invoke-Python -m coverage run --branch --source=tools --parallel-mode tools/check-reproducible.py @hashArguments
+    Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode tools/check-reproducible.py @hashArguments
 } "Shipped binary inventory"
+Invoke-Checked {
+    $libraryArguments = @('--allow-dirty')
+    if ($RunUiTests) { $libraryArguments += '--test' }
+    Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode libraries/onescript-windows/build.py @libraryArguments
+} "Independent Windows library source package and optional desktop smoke"
 Invoke-Checked { Invoke-Python -m coverage combine --append } "Isolated test runner coverage merge"
 Invoke-Checked {
     Invoke-Python -m coverage xml -o artifacts/coverage/python/coverage.xml
