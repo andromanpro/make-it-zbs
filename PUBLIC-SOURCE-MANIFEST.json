@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "9664dfed6600e5c6c7121ce345f573543723f25d",
+  "sourceCommit": "606167e8fb620ac75b56d22ae9da6a1f23f858be",
   "dirty": false,
   "historyIncluded": false,
   "files": {
@@ -12,7 +12,7 @@
     ".gitleaks.toml": "ec527a85633d587ee8e75eb26e45fa2a683022cce9af7c6a0a089be15e309ff1",
     "CHANGELOG.md": "82308a51cb7db6c4c159791e699d38c2ced8142d6ee112affd0ed03b70c900c9",
     "CONTRIBUTING.md": "bb679b9df0cf215066462165dc78d7eb087c5d0b255e51c332450883f14fd022",
-    "Directory.Build.props": "9f5f23b979fe78140e0872a171264bc003819d7e5c3dc65d2bd0459a372f1f23",
+    "Directory.Build.props": "45510f6e0c7f6c15b98da9b1c4fb89b56749a9b3fe401b381bdf849ae79e21f4",
     "INSTALL.md": "b6534d844fd4f1e43888232cd8409582c30fb9d658e9c0fb8c938b06cc1d07e4",
     "LICENSE": "48de06960f149050161eb15ce24a0d24eb2238c7d96c7bba065bd6e91bd9b931",
     "Make-it-ZBS.bat": "858aa429cdb05726a22a8c262c1c3b63e9fb7ea5adb0cfb2c5c0cd13f51a2a09",
