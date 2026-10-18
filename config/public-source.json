@@ -8,7 +8,8 @@
     "requirements-dev.txt", "Make-it-ZBS.bat", "config/.env.example",
     "config/settings.json", "config/models.json", "config/prompts.json",
     "config/model-catalog.json", "config/public-source.json",
-    "docs/replacement-backups.md", "docs/RELEASING.md", "docs/images/wiki-hero-magic-button.png",
+    "docs/replacement-backups.md", "docs/RELEASING.md", "docs/USER-GUIDE.md", "docs/images/wiki-hero-magic-button.png",
+    "docs/images/guide-settings.png", "docs/images/guide-status.png", "docs/images/guide-word-selection.png", "docs/images/guide-paint.png",
     "docs/manual-smoke/ui-automation.md", "docs/manual-smoke/ai-chat-quick-check.md"
   ],
   "directories": [
