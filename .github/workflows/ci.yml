@@ -15,6 +15,7 @@ defaults:
 
 env:
   ZbsPythonCommand: python
+  DOTNET_CLI_UI_LANGUAGE: ru-RU
 
 jobs:
   verify:

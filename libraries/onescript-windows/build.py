@@ -32,6 +32,7 @@ def copy(source, target):
 
 
 def run(command, log, cwd, env=None):
+    env = dict(os.environ if env is None else env, DOTNET_CLI_UI_LANGUAGE="ru-RU")
     with log.open("w", encoding="utf-8") as output:
         result = subprocess.run(command, cwd=cwd, env=env, stdout=output, stderr=subprocess.STDOUT, timeout=300)
     if result.returncode:

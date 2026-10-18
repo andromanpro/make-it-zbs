@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 
@@ -45,8 +46,9 @@ def main():
     sdk = subprocess.check_output(["dotnet", "--version"], cwd=ROOT, text=True).strip()
 
     def build(revision):
+        environment = dict(os.environ, DOTNET_CLI_UI_LANGUAGE="ru-RU")
         subprocess.run(["dotnet", "build", "-c", "Release", "src/ZBSWindowsComponent/ZBSWindowsComponent.csproj",
-                        "--no-incremental", f"-p:SourceRevisionId={revision}"], cwd=ROOT, check=True)
+                        "--no-incremental", f"-p:SourceRevisionId={revision}"], cwd=ROOT, check=True, env=environment)
 
     results = verify_builds(build)
     output = ROOT / "artifacts/reproducible-build.json"

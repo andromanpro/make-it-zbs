@@ -6,6 +6,11 @@ to publish or rewrite an existing remote history.
 
 ## Verification
 
+Build locale is pinned to `DOTNET_CLI_UI_LANGUAGE=ru-RU`, including independent
+source-package builds. MSBuild's generated AssemblyInfo includes a localized
+comment in its PDB checksum; an unpinned locale changes binary hashes even when
+the executable logic is identical. `tools/ci.ps1` sets this environment variable.
+
 1. Freeze a reviewed commit with current component/helper binaries and license
    inventory. The working tree must be clean. Use the SDK in `global.json` and
    the dependency lock files. Never copy global OVM libraries into a release.
