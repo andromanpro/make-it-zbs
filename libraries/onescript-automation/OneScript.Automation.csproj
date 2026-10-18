@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>OneScript.Automation</AssemblyName>
+    <Version>0.1.0-beta.1</Version>
+    <Authors>andromanpro</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <DeterministicSourcePaths>true</DeterministicSourcePaths>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <CoreSourceRoot Condition="Exists('$(MSBuildProjectDirectory)/core/NativeMethods.cs')">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/core'))</CoreSourceRoot>
+    <CoreSourceRoot Condition="'$(CoreSourceRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../src/ZBSWindowsComponent'))</CoreSourceRoot>
+    <CaptureSourceRoot Condition="Exists('$(MSBuildProjectDirectory)/capture/CaptureEngine.cs')">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/capture'))</CaptureSourceRoot>
+    <CaptureSourceRoot Condition="'$(CaptureSourceRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../src/CaptureHost'))</CaptureSourceRoot>
+    <WorkerRoot Condition="Exists('$(MSBuildProjectDirectory)/workers/CaptureHost')">$(MSBuildProjectDirectory)/workers</WorkerRoot>
+    <WorkerRoot Condition="'$(WorkerRoot)' == ''">$(MSBuildProjectDirectory)/../../src</WorkerRoot>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1903;NU1904</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <PackageReference Include="MakeItZBS.OneScript" Version="1.9.4-zbs.1" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="MakeItZBS.OneScript.StandardLibrary" Version="1.9.4-zbs.1" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <Compile Include="Automation*.cs" />
+    <Compile Include="$(CoreSourceRoot)/NativeMethods.cs;$(CoreSourceRoot)/Helpers/KeyConverter.cs;$(CoreSourceRoot)/OwnedProcessRunner.cs;$(CoreSourceRoot)/OperationControl.cs;$(CoreSourceRoot)/TemporaryFileStore.cs;$(CoreSourceRoot)/DesktopCaptureClient.cs;$(CoreSourceRoot)/CodexCliClient.cs;$(CoreSourceRoot)/SecretRedactor.cs;$(CoreSourceRoot)/OpenRouterHttpTransport.cs;$(CoreSourceRoot)/AiClientProfiles.cs" Link="core/%(Filename)%(Extension)" />
+    <Compile Include="$(CaptureSourceRoot)/CaptureEngine.cs" Link="capture/CaptureEngine.cs" />
+    <ProjectReference Include="$(WorkerRoot)/CaptureHost/MakeItZBS.CaptureHost.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="$(WorkerRoot)/ProcessHost/MakeItZBS.ProcessHost.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <Target Name="MapAutomationSources" BeforeTargets="InitializeSourceRootMappedPaths"
+          DependsOnTargets="_InitializeSourceRootMappedPathsFromSourceControl">
+    <ItemGroup>
+      <SourceRoot Remove="@(SourceRoot)" />
+      <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash('$(MSBuildProjectDirectory)'))" />
+      <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash('$(CoreSourceRoot)'))" />
+      <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash('$(CaptureSourceRoot)'))" />
+    </ItemGroup>
+  </Target>
+  <Target Name="CopyPrivateWorkers" AfterTargets="Build">
+    <ItemGroup>
+      <WorkerFiles Include="$(WorkerRoot)/CaptureHost/bin/$(Configuration)/net472/*.dll;$(WorkerRoot)/CaptureHost/bin/$(Configuration)/net472/*.exe*;$(WorkerRoot)/ProcessHost/bin/$(Configuration)/net472/*.exe*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(WorkerFiles)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

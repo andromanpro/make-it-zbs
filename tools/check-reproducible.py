@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 import subprocess
 
@@ -27,6 +28,18 @@ def verify_builds(build):
     return results
 
 
+def save_diagnostics(root, build):
+    diagnostics = root / "artifacts/reproducibility-diagnostics"
+    diagnostics.mkdir(parents=True, exist_ok=True)
+    for item in build.iterdir():
+        if item.suffix in (".exe", ".dll", ".pdb") and item.name.startswith(("MakeItZBS.", "ZBSWindowsComponent")):
+            shutil.copyfile(item, diagnostics / item.name)
+    for project in ("CaptureHost", "ProcessHost", "ZBSWindowsComponent"):
+        obj = root / "src" / project / "obj/Release/net472"
+        for item in obj.glob("*Assembly*.cs"):
+            shutil.copyfile(item, diagnostics / (project + "-" + item.name))
+
+
 def verify_shipped(root, compare=True):
     build = root / "src/ZBSWindowsComponent/bin/Release/net472"
     if compare:
@@ -34,6 +47,7 @@ def verify_shipped(root, compare=True):
             if path.is_file() and path.suffix in (".dll", ".exe", ".config"):
                 target = root / "lib/net472" / path.relative_to(build)
                 if not target.is_file() or hashlib.sha256(path.read_bytes()).digest() != hashlib.sha256(target.read_bytes()).digest():
+                    save_diagnostics(root, build)
                     raise ValueError("Missing or stale shipped binary: " + path.relative_to(build).as_posix())
     digest = hashlib.sha256((build / "ZBSWindowsComponent.dll").read_bytes()).hexdigest()
     output = root / "artifacts/ZBSWindowsComponent.sha256"

@@ -39,6 +39,8 @@ jobs:
         run: ./tools/ci.ps1 -VerifyReleaseDll
       - name: Build independent OneScript Windows library and its source package
         run: python libraries/onescript-windows/build.py
+      - name: Build independent automation module and its source package
+        run: python libraries/onescript-automation/build.py
       - name: Public source inventory
         run: python tools/export-public-source.py artifacts/public-source
       - name: Secret scan including vendored archives
@@ -56,6 +58,7 @@ jobs:
           retention-days: 14
           path: |
             artifacts/reproducible-build.json
+            artifacts/reproducibility-diagnostics/**
             artifacts/ui-tests/**/summary.json
             artifacts/onescript-tests/**/summary.json
             artifacts/coverage/**
@@ -65,6 +68,8 @@ jobs:
             dist/libraries/*.zip
             dist/libraries/*.sha256
             artifacts/windows-library/**/summary.json
+            artifacts/automation-library/**/summary.json
+            artifacts/automation-tests/**/summary.json
 
 # UI/Word/Paint runs require an interactive desktop and remain a release check.
 # This workflow does not publish releases, receive a signing key or contact LAN Sonar.

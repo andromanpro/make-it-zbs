@@ -68,6 +68,18 @@ py -3.14 tools/verify-dist.py dist/MakeItZBS --run-probe
 клавиш, настоящих AI-клиентов и разных мониторов. Известные ограничения
 перечислены в [инструкции](INSTALL.md).
 
+## Библиотеки OneScript
+
+- [OneScript.Windows](libraries/onescript-windows/README.md): буфер обмена,
+  сохранение и безопасное восстановление, сведения об активном окне.
+- [OneScript.Automation](libraries/onescript-automation/README.md): отдельный
+  DXGI/GDI-захват, глобальная горячая клавиша без трея, отменяемые запросы Codex
+  CLI/OpenRouter и распознавание профилей Codex/Claude/OpenCode. Само управление
+  чатами Claude/OpenCode в этот модуль не входит.
+
+Обе библиотеки независимы от установленного приложения. Их beta-пакеты и
+совместимость с хостом описаны отдельно; это не внешние компоненты NativeAPI 1С.
+
 ## Участие и лицензия
 
 [Правила участия](CONTRIBUTING.md). Собственный код: [MIT](LICENSE).

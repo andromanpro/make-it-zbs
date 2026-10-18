@@ -9,7 +9,7 @@ $ErrorActionPreference = "Stop"
 # WriteCodeFragment emits a localized source comment included in the PDB checksum.
 $env:DOTNET_CLI_UI_LANGUAGE = "ru-RU"
 $root = Split-Path -Parent $PSScriptRoot
-$pythonSources = "tools,libraries/onescript-windows"
+$pythonSources = "tools,libraries/onescript-windows,libraries/onescript-automation"
 Set-Location $root
 if (($RunWordSmoke -or $RunPaintSmoke) -and -not $RunUiTests) {
     throw "Word/Paint checks require -RunUiTests and an interactive desktop."
@@ -84,6 +84,15 @@ Invoke-Checked {
     if ($RunUiTests) { $libraryArguments += '--test' }
     Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode libraries/onescript-windows/build.py @libraryArguments
 } "Independent Windows library source package and optional desktop smoke"
+Invoke-Checked {
+    Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode libraries/onescript-automation/run-tests.py --coverage --runtime $runtimeRoot.Trim()
+    if ($LASTEXITCODE -ne 0) { throw "Automation module tests failed" }
+    if ($RunUiTests) {
+        Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode libraries/onescript-automation/run-tests.py --desktop --coverage
+        if ($LASTEXITCODE -ne 0) { throw "Automation module desktop tests failed" }
+    }
+    Invoke-Python -m coverage run --branch --source=$pythonSources --parallel-mode libraries/onescript-automation/build.py --allow-dirty
+} "Independent automation tests and source package"
 Invoke-Checked { Invoke-Python -m coverage combine --append } "Isolated test runner coverage merge"
 Invoke-Checked {
     Invoke-Python -m coverage xml -o artifacts/coverage/python/coverage.xml
