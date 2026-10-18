@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "89eb046133845d403885abd7cd3b2c9dc4c6d5b6",
+  "sourceCommit": "e9cfffd2f5b1cd4aa349c2d80b1e60b849499f97",
   "dirty": false,
   "historyIncluded": false,
   "files": {
@@ -237,7 +237,7 @@
     "test/mocks/mock-wininfo.os": "dd106b67caccc4c2774c551d5b610579e11bf8daa6d31d9125512861baec22c7",
     "test/mocks/noop-log.os": "6c5d8b7d7ffb65b36765ec63e2cc456173a69a2bd7a1b0a7561bf9d5c853b457",
     "test/python/test_private_runtime_build.py": "a97b140e67412bd7a5367f992d1251c27b2aa444a81e41f44203c289b580e9f9",
-    "test/python/test_publication.py": "2d0afdce6119a4727e03ad82d8d62424bc61482f5404d5348447593f96c0e757",
+    "test/python/test_publication.py": "2100eaa7d6e3a01cd262c58ca9dd9fe80d724de9ac447754745500fb29f799cf",
     "test/python/test_reproducible.py": "e160ec2e832068257ee6acdbe8f9c94705742c00a8168ad96eb657f2de12f311",
     "test/python/test_tools.py": "7c8f3145bcd2a2217e6d0feaef5ed7731f7930053674cb53f7cac5663ea10ab6",
     "test/python/test_ui_runner.py": "73f678272811da6886e71663301e3529a93019582969d900f96d01268bb8bc7f",
@@ -269,7 +269,7 @@
     "tools/check-secrets.py": "e51de7f12bd730a3202a157ac2641697879151a94316b77c23111cd3004f4e90",
     "tools/ci.ps1": "3807f25b49e7237930e38af8a3ef455e9c600a6e4e445516fdd530e96c4adf08",
     "tools/collect-licenses.py": "9663f3ef30b2e419c94a143a2ab1697d5c68a6cbca5b33b60ab0176969c03e91",
-    "tools/export-public-source.py": "6d92cb4d54136e2bfe6b9b280786484bf31cf291528c2b0bc2d3789eb6051a9a",
+    "tools/export-public-source.py": "1064be6735cfee9bfc4fdf29d092f7d6d934a137bedfa9d4e94d2ffabe7a4528",
     "tools/publish-gitea-release.ps1": "a3cd73a9e165c1acb0e8ac9e0635684ffce4575e0e9a5e6e240942f6680ad07b",
     "tools/run-onescript-tests.py": "5f26e087c64654aebffa92282c8bb7ba2e0bd489f5ad1298f5aae615902ccaf4",
     "tools/run-secret-audit.py": "2c05817034082c8b5dc478d742e04a9bc159f4ce3835fc898cba714da77df2df",

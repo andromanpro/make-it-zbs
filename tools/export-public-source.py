@@ -22,6 +22,7 @@ def public_path(relative, policy):
 
 
 def export(root, destination, paths, revision, dirty=False):
+    root = root.resolve()
     destination = destination.resolve()
     if not any(destination.is_relative_to(root / area) for area in ("dist", "artifacts")):
         raise ValueError("Public export must stay within dist or artifacts")

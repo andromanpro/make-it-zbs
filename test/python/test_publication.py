@@ -173,6 +173,18 @@ class PublicationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "filesystem"):
                 public.export(self.root, self.root / "dist/new", policy["files"], "a")
 
+    def test_public_export_normalizes_the_source_root_before_containment_checks(self):
+        self.policy()
+        self.write("README.md")
+        aliased_root = self.root / "config" / ".."
+        destination = self.root / "dist/normalized"
+        receipt = public.export(aliased_root, destination,
+                                ["README.md", "config/public-source.json"], "a" * 40)
+        self.assertEqual(len(receipt["files"]), 2)
+        self.assertFalse(receipt["historyIncluded"])
+        with self.assertRaisesRegex(ValueError, "within"):
+            public.export(aliased_root, self.root.parent / "outside", [], "a")
+
     def test_runtime_license_collection_covers_dlls_and_detects_staleness(self):
         package = self.root / "cache/example/1.0"
         self.write("cache/example/1.0/example.nuspec", b'<package><metadata><license type="expression">MIT</license><authors>Example</authors></metadata></package>')
