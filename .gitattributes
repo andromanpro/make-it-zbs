@@ -6,3 +6,8 @@
 *.csproj text eol=lf
 *.props text eol=lf
 *.targets text eol=lf
+
+# Vendored notices are hashed byte-for-byte against their original packages.
+vendor/licenses/** -text
+vendor/onescript/** -text
+src/CaptureHost/THIRD-PARTY-CAPTURE.txt -text

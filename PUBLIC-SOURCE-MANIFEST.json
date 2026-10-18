@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "e9cfffd2f5b1cd4aa349c2d80b1e60b849499f97",
+  "sourceCommit": "9664dfed6600e5c6c7121ce345f573543723f25d",
   "dirty": false,
   "historyIncluded": false,
   "files": {
     ".config/dotnet-tools.json": "302f54d296851518985615e68a58aa4fe1bd6cbd71b6e02b0757de40d26923f6",
-    ".gitattributes": "76e3cdf403603b570b6164254851bf81fa2cad7c91840ebce4b0646806d7f799",
+    ".gitattributes": "70857b15880cfd0f2aea9e11e9a1049401332492e15212ff08102055ef9c1ca4",
     ".github/ISSUE_TEMPLATE/bug_report.md": "1ee6fc5dff8fbb73173780bd096ddacff5792aa4c1ed85e73264d5dce1a109c8",
     ".github/workflows/ci.yml": "f1a80d3ca29f64d00089da04f81480de3fe118f108255dacf6412adaa8d31fb7",
     ".gitignore": "9bedf5f3d2777114c6231e130cd372d6e6b5c42521da7fae480433c180f9cd51",
