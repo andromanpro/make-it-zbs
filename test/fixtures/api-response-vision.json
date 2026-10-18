@@ -1,0 +1,21 @@
+{
+  "id": "gen-vision-abcdef123456",
+  "model": "anthropic/claude-opus-4",
+  "object": "chat.completion",
+  "created": 1709654500,
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "На изображении представлена веб-страница с навигационным меню в верхней части, основным контентом в центре и боковой панелью справа. Страница выполнена в светлых тонах с акцентами синего цвета."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1200,
+    "completion_tokens": 85,
+    "total_tokens": 1285
+  }
+}

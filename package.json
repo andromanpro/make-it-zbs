@@ -1,0 +1,16 @@
+{
+  "name": "make-it-zbs-ui",
+  "private": true,
+  "author": "andromanpro",
+  "homepage": "https://androman.pro",
+  "scripts": {
+    "lint:js": "eslint ui/*.js integrations/vscode/*.js test/javascript/*.js eslint.config.js",
+    "test:js": "node --test test/javascript/*.test.js",
+    "coverage:js": "c8 --include=ui/i18n.js --include=ui/settings-core.js --include=ui/settings.js --include=ui/preview.js --include=integrations/vscode/*.js --reporter=text --reporter=lcov --reports-dir=artifacts/coverage/javascript --check-coverage --lines=90 --functions=90 --branches=80 npm run test:js"
+  },
+  "devDependencies": {
+    "c8": "12.0.0",
+    "eslint": "10.7.0",
+    "jsdom": "^29.1.1"
+  }
+}

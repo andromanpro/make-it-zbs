@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Make it ZBS Preview</title>
+    <link rel="stylesheet" href="preview.css">
+    <script defer src="i18n.js"></script>
+    <script type="module" src="preview.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="title-block">
+                <div class="eyebrow">Make it ZBS</div>
+                <h1 data-i18n="preview.title">Предпросмотр</h1>
+            </div>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="preview.context">Контекст</span>
+                    <span id="contextValue" class="meta-value">-</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="preview.model">Модель</span>
+                    <span id="modelValue" class="meta-value">-</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tabs" aria-label="Режимы предпросмотра" data-i18n-aria-label="preview.views">
+            <button class="tab" type="button" data-view="reasoning" id="reasoningTab" hidden data-i18n="preview.reasoning">Ход обработки</button>
+            <button class="tab active" type="button" data-view="result" data-i18n="preview.result">Результат</button>
+            <button class="tab" type="button" data-view="diff" data-i18n="preview.diff">Изменения</button>
+            <button class="tab" type="button" data-view="original" data-i18n="preview.original">Оригинал</button>
+        </nav>
+
+        <main class="code-panel">
+            <pre id="reasoningBlock" class="code-block reasoning-block" hidden><code></code></pre>
+            <pre id="codeBlock" class="code-block"><code></code></pre>
+            <div id="diffBlock" class="diff-block" hidden></div>
+        </main>
+
+        <footer class="actions">
+            <output id="previewNotice" class="preview-notice" hidden></output>
+            <div id="integrityReview" class="integrity-review" hidden>
+                <output><strong id="integrityTitle" data-i18n="preview.integrityTitle">Изменены числа или даты</strong></output>
+                <div id="integrityDetails" class="integrity-details"></div>
+                <label id="integrityConsent"><input id="integrityAcknowledged" type="checkbox"><span data-i18n="preview.integrityConsent">Числа и даты проверены, изменения намеренные</span></label>
+            </div>
+            <button id="applyButton" class="button primary" type="button" hidden data-i18n="preview.apply">Применить</button>
+            <button id="copyButton" class="button secondary" type="button" data-i18n="preview.copy">Копировать</button>
+            <button id="cancelButton" class="button secondary cancel" type="button" data-i18n="preview.cancel">Отмена</button>
+        </footer>
+
+        <div id="spinner" class="spinner-overlay" hidden>
+            <div class="spinner"></div>
+            <span data-i18n="preview.processing">Обрабатываю...</span>
+        </div>
+    </div>
+</body>
+</html>

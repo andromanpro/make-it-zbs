@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "license": "MPL-2.0",
+      "copyright": "Copyright (c) 2017 EvilBeaver",
+      "authors": "OneScript.Language",
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "name": "MakeItZBS.OneScript.Language",
+      "version": "1.9.4-zbs.1",
+      "binaries": [
+        "onescript.language.dll"
+      ],
+      "notices": {
+        "MakeItZBS.OneScript.Language/1.9.4-zbs.1/LICENSE.txt": "9a381e233fb3606c9ba7ca3645778adcb000dc00bb884b3f9af2f00bb129924d"
+      }
+    },
+    {
+      "license": "MPL-2.0",
+      "copyright": "Copyright (c) 2017 EvilBeaver",
+      "authors": "ScriptEngine.HostedScript",
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "name": "MakeItZBS.OneScript.StandardLibrary",
+      "version": "1.9.4-zbs.1",
+      "binaries": [
+        "scriptengine.hostedscript.dll"
+      ],
+      "notices": {
+        "MakeItZBS.OneScript.StandardLibrary/1.9.4-zbs.1/LICENSE.txt": "9a381e233fb3606c9ba7ca3645778adcb000dc00bb884b3f9af2f00bb129924d"
+      }
+    },
+    {
+      "license": "MPL-2.0",
+      "copyright": "Copyright (c) 2017 EvilBeaver",
+      "authors": "ScriptEngine",
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "name": "MakeItZBS.OneScript",
+      "version": "1.9.4-zbs.1",
+      "binaries": [
+        "scriptengine.dll"
+      ],
+      "notices": {
+        "MakeItZBS.OneScript/1.9.4-zbs.1/LICENSE.txt": "9a381e233fb3606c9ba7ca3645778adcb000dc00bb884b3f9af2f00bb129924d"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Microsoft.Bcl.AsyncInterfaces",
+      "version": "9.0.9",
+      "binaries": [
+        "microsoft.bcl.asyncinterfaces.dll"
+      ],
+      "notices": {
+        "Microsoft.Bcl.AsyncInterfaces/9.0.9/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "Microsoft.Bcl.AsyncInterfaces/9.0.9/THIRD-PARTY-NOTICES.TXT": "40686c6447a7d5b5d3693068e4571b5f483d7ed335aeee773ef662440de4c5d5"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Microsoft.Bcl.HashCode",
+      "version": "6.0.0",
+      "binaries": [
+        "microsoft.bcl.hashcode.dll"
+      ],
+      "notices": {
+        "Microsoft.Bcl.HashCode/6.0.0/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "LICENSE.TXT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://aka.ms/deprecateLicenseUrl",
+      "name": "Microsoft.DotNet.PlatformAbstractions",
+      "version": "3.1.6",
+      "binaries": [
+        "microsoft.dotnet.platformabstractions.dll"
+      ],
+      "notices": {
+        "Microsoft.DotNet.PlatformAbstractions/3.1.6/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "Microsoft.DotNet.PlatformAbstractions/3.1.6/THIRD-PARTY-NOTICES.TXT": "2e3b2cb5cb57ff44310801dd46e51dab1d35d9cfe196a9709ee8cb9c6f8e4d4a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Microsoft.Extensions.DependencyModel",
+      "version": "9.0.9",
+      "binaries": [
+        "microsoft.extensions.dependencymodel.dll"
+      ],
+      "notices": {
+        "Microsoft.Extensions.DependencyModel/9.0.9/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "Microsoft.Extensions.DependencyModel/9.0.9/THIRD-PARTY-NOTICES.TXT": "40686c6447a7d5b5d3693068e4571b5f483d7ed335aeee773ef662440de4c5d5"
+      }
+    },
+    {
+      "license": "LICENSE.txt",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://aka.ms/deprecateLicenseUrl",
+      "name": "Microsoft.Web.WebView2",
+      "version": "1.0.3967.48",
+      "binaries": [
+        "microsoft.web.webview2.core.dll",
+        "microsoft.web.webview2.winforms.dll",
+        "microsoft.web.webview2.wpf.dll",
+        "webview2loader.dll"
+      ],
+      "notices": {
+        "Microsoft.Web.WebView2/1.0.3967.48/LICENSE.txt": "0af8f1b807512aae39c2ac1aa4d0cae65cabecb6fd554b8439a5162a0d6eca55",
+        "Microsoft.Web.WebView2/1.0.3967.48/NOTICE.txt": "106423785c5b7eba0a8e61d1837f2132e9c828e20ad530f565d981c1df60dd90"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "Copyright © James Newton-King 2008",
+      "authors": "James Newton-King",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Newtonsoft.Json",
+      "version": "13.0.3",
+      "binaries": [
+        "newtonsoft.json.dll"
+      ],
+      "notices": {
+        "Newtonsoft.Json/13.0.3/LICENSE.md": "b98a397897ff55f76cddc380041507a95a896b2946e0188703bf0496793d6516"
+      }
+    },
+    {
+      "license": "LICENSE.txt",
+      "copyright": "",
+      "authors": "Original authors of DotNetZip and Rene Mihula (ProDotNetZip)",
+      "licenseUrl": "https://aka.ms/deprecateLicenseUrl",
+      "name": "ProDotNetZip",
+      "version": "1.20.0",
+      "binaries": [
+        "prodotnetzip.dll"
+      ],
+      "notices": {
+        "ProDotNetZip/1.20.0/LICENSE.txt": "767eab1311d896cd51d27489c0a9d56b16c1d680532727b920e75079f0125ba1"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "",
+      "authors": ".NET Foundation and Contributors",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Silk.NET.Core",
+      "version": "2.23.0",
+      "binaries": [
+        "silk.net.core.dll"
+      ],
+      "notices": {
+        "Silk.NET.Core/2.23.0/ATTRIBUTION.txt": "011488aee15e1610a2f91dbb156a66e82ad009a9ba6b8d33bf606ed2e68238a5",
+        "Silk.NET.Core/2.23.0/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "",
+      "authors": ".NET Foundation and Contributors",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Silk.NET.DXGI",
+      "version": "2.23.0",
+      "binaries": [
+        "silk.net.dxgi.dll"
+      ],
+      "notices": {
+        "Silk.NET.DXGI/2.23.0/ATTRIBUTION.txt": "011488aee15e1610a2f91dbb156a66e82ad009a9ba6b8d33bf606ed2e68238a5",
+        "Silk.NET.DXGI/2.23.0/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "",
+      "authors": ".NET Foundation and Contributors",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Silk.NET.Direct3D11",
+      "version": "2.23.0",
+      "binaries": [
+        "silk.net.direct3d11.dll"
+      ],
+      "notices": {
+        "Silk.NET.Direct3D11/2.23.0/ATTRIBUTION.txt": "011488aee15e1610a2f91dbb156a66e82ad009a9ba6b8d33bf606ed2e68238a5",
+        "Silk.NET.Direct3D11/2.23.0/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "",
+      "authors": ".NET Foundation and Contributors",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Silk.NET.Maths",
+      "version": "2.23.0",
+      "binaries": [
+        "silk.net.maths.dll"
+      ],
+      "notices": {
+        "Silk.NET.Maths/2.23.0/ATTRIBUTION.txt": "011488aee15e1610a2f91dbb156a66e82ad009a9ba6b8d33bf606ed2e68238a5",
+        "Silk.NET.Maths/2.23.0/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Buffers",
+      "version": "4.6.1",
+      "binaries": [
+        "system.buffers.dll"
+      ],
+      "notices": {
+        "System.Buffers/4.6.1/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Drawing.Common",
+      "version": "6.0.0",
+      "binaries": [
+        "system.drawing.common.dll"
+      ],
+      "notices": {
+        "System.Drawing.Common/6.0.0/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Drawing.Common/6.0.0/THIRD-PARTY-NOTICES.TXT": "a6344bfb229bc08d1071cec400eea216e307439f961c5943ec1b56d2245acb95"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.IO.Pipelines",
+      "version": "9.0.9",
+      "binaries": [
+        "system.io.pipelines.dll"
+      ],
+      "notices": {
+        "System.IO.Pipelines/9.0.9/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.IO.Pipelines/9.0.9/THIRD-PARTY-NOTICES.TXT": "40686c6447a7d5b5d3693068e4571b5f483d7ed335aeee773ef662440de4c5d5"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Memory",
+      "version": "4.6.3",
+      "binaries": [
+        "system.memory.dll"
+      ],
+      "notices": {
+        "System.Memory/4.6.3/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Numerics.Vectors",
+      "version": "4.6.1",
+      "binaries": [
+        "system.numerics.vectors.dll"
+      ],
+      "notices": {
+        "System.Numerics.Vectors/4.6.1/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Runtime.CompilerServices.Unsafe",
+      "version": "6.1.2",
+      "binaries": [
+        "system.runtime.compilerservices.unsafe.dll"
+      ],
+      "notices": {
+        "System.Runtime.CompilerServices.Unsafe/6.1.2/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Security.AccessControl",
+      "version": "6.0.0",
+      "binaries": [
+        "system.security.accesscontrol.dll"
+      ],
+      "notices": {
+        "System.Security.AccessControl/6.0.0/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Security.AccessControl/6.0.0/THIRD-PARTY-NOTICES.TXT": "a6344bfb229bc08d1071cec400eea216e307439f961c5943ec1b56d2245acb95"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Security.Permissions",
+      "version": "8.0.0",
+      "binaries": [
+        "system.security.permissions.dll"
+      ],
+      "notices": {
+        "System.Security.Permissions/8.0.0/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Security.Permissions/8.0.0/THIRD-PARTY-NOTICES.TXT": "19c19dcac9f3ee6302cfbc6745bb8e79f08efc4c933eb8dc5509bf14b88347ec"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Security.Principal.Windows",
+      "version": "5.0.0",
+      "binaries": [
+        "system.security.principal.windows.dll"
+      ],
+      "notices": {
+        "System.Security.Principal.Windows/5.0.0/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Security.Principal.Windows/5.0.0/THIRD-PARTY-NOTICES.TXT": "78e22d4d24a710d2a09426c09060f3448204778ed506b1da55447a6089b54fae"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Text.Encoding.CodePages",
+      "version": "8.0.0",
+      "binaries": [
+        "system.text.encoding.codepages.dll"
+      ],
+      "notices": {
+        "System.Text.Encoding.CodePages/8.0.0/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Text.Encoding.CodePages/8.0.0/THIRD-PARTY-NOTICES.TXT": "19c19dcac9f3ee6302cfbc6745bb8e79f08efc4c933eb8dc5509bf14b88347ec"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Text.Encodings.Web",
+      "version": "9.0.9",
+      "binaries": [
+        "system.text.encodings.web.dll"
+      ],
+      "notices": {
+        "System.Text.Encodings.Web/9.0.9/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Text.Encodings.Web/9.0.9/THIRD-PARTY-NOTICES.TXT": "40686c6447a7d5b5d3693068e4571b5f483d7ed335aeee773ef662440de4c5d5"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "System.Text.Json",
+      "version": "9.0.9",
+      "binaries": [
+        "system.text.json.dll"
+      ],
+      "notices": {
+        "System.Text.Json/9.0.9/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Text.Json/9.0.9/THIRD-PARTY-NOTICES.TXT": "40686c6447a7d5b5d3693068e4571b5f483d7ed335aeee773ef662440de4c5d5"
+      }
+    },
+    {
+      "license": "License file",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://github.com/dotnet/corefx/blob/master/LICENSE.TXT",
+      "name": "System.Threading.Tasks.Extensions",
+      "version": "4.5.4",
+      "binaries": [
+        "system.threading.tasks.extensions.dll"
+      ],
+      "notices": {
+        "System.Threading.Tasks.Extensions/4.5.4/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.Threading.Tasks.Extensions/4.5.4/THIRD-PARTY-NOTICES.TXT": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+      }
+    },
+    {
+      "license": "License file",
+      "copyright": "© Microsoft Corporation.  All rights reserved.",
+      "authors": "Microsoft",
+      "licenseUrl": "https://github.com/dotnet/corefx/blob/master/LICENSE.TXT",
+      "name": "System.ValueTuple",
+      "version": "4.5.0",
+      "binaries": [
+        "system.valuetuple.dll"
+      ],
+      "notices": {
+        "System.ValueTuple/4.5.0/LICENSE.TXT": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "System.ValueTuple/4.5.0/THIRD-PARTY-NOTICES.TXT": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+      }
+    },
+    {
+      "license": "MIT",
+      "copyright": "",
+      "authors": "Ultz.Bcl.Half",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "name": "Ultz.Bcl.Half.Fallback",
+      "version": "1.0.0",
+      "binaries": [
+        "ultz.bcl.half.dll"
+      ],
+      "notices": {
+        "Ultz.Bcl.Half.Fallback/1.0.0/ATTRIBUTION.txt": "011488aee15e1610a2f91dbb156a66e82ad009a9ba6b8d33bf606ed2e68238a5",
+        "Ultz.Bcl.Half.Fallback/1.0.0/LICENSE.txt": "5dd42d4e16cd1e2f6c63a7076d71c5c9bd03d1298f1463a2fe4c26cf0dd1b62a"
+      }
+    }
+  ]
+}

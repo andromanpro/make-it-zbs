@@ -1,0 +1,13 @@
+{
+  "name": "make-it-zbs-editor",
+  "displayName": "Make it ZBS Editor Bridge",
+  "description": "Version-checked edits from the local Make it ZBS application.",
+  "publisher": "androman",
+  "version": "0.1.0",
+  "engines": { "vscode": "^1.90.0" },
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "extensionKind": ["ui"],
+  "capabilities": { "untrustedWorkspaces": { "supported": true } },
+  "license": "MIT"
+}

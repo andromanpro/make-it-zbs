@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smoke Dashboard</title>
+    <style>
+        body { margin: 0; background: #101418; color: #f4f7f9; font: 16px/1.45 "Segoe UI", sans-serif; }
+        main { max-width: 980px; margin: 0 auto; padding: 32px; }
+        h1 { margin: 0 0 6px; font-size: 28px; }
+        p { color: #aeb8c2; }
+        table { width: 100%; margin-top: 24px; border-collapse: collapse; background: #181e24; }
+        caption { padding: 12px 16px; color: #f4f7f9; font-weight: 600; text-align: left; }
+        th, td { padding: 13px 16px; border-bottom: 1px solid #35404a; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        th { color: #80e1cd; font-size: 13px; }
+        .bad { color: #ff8f9e; font-weight: 700; }
+        .note { margin-top: 18px; padding-left: 12px; border-left: 3px solid #80e1cd; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Воронка продаж: неделя 32</h1>
+        <p>Сравнение с предыдущей неделей. Данные синтетические.</p>
+        <table>
+            <caption>Показатели воронки по регионам</caption>
+            <thead>
+                <tr><th>Регион</th><th>Сессии</th><th>Конверсия</th><th>Возвраты</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Север</td><td>12 480</td><td class="bad">1,8% (-41%)</td><td>4,2%</td></tr>
+                <tr><td>Юг</td><td>10 920</td><td>3,4% (+3%)</td><td>4,8%</td></tr>
+                <tr><td>Запад</td><td>9 730</td><td>3,1% (-2%)</td><td>5,1%</td></tr>
+                <tr><td>Восток</td><td>11 610</td><td>3,6% (+5%)</td><td class="bad">17,9%</td></tr>
+            </tbody>
+        </table>
+        <p class="note">Задача: назвать две главные аномалии и предложить порядок проверки.</p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    ".gitattributes", ".gitignore", ".gitleaks.toml", ".config/dotnet-tools.json", "global.json", "Directory.Build.props",
+    "LICENSE", "README.md", "INSTALL.md", "TESTING.md", "CONTRIBUTING.md",
+    "PRIVACY.md", "SECURITY.md", "THIRD-PARTY-NOTICES.md", "CHANGELOG.md",
+    "NuGet.Config", "package.json", "package-lock.json", "eslint.config.js",
+    "requirements-dev.txt", "Make-it-ZBS.bat", "config/.env.example",
+    "config/settings.json", "config/models.json", "config/prompts.json",
+    "config/model-catalog.json", "config/public-source.json",
+    "docs/replacement-backups.md", "docs/RELEASING.md", "docs/images/wiki-hero-magic-button.png",
+    "docs/manual-smoke/ui-automation.md", "docs/manual-smoke/ai-chat-quick-check.md"
+  ],
+  "directories": [
+    ".github", "src", "ui", "integrations/vscode", "test", "lib/net472", "vendor",
+    "docs/manual-smoke/samples"
+  ],
+  "tools": [
+    "build-dist.py", "build-release.py", "build-onescript.py", "build-vscode.py",
+    "check-reproducible.py", "check-secrets.py", "collect-licenses.py",
+    "export-public-source.py", "verify-dist.py", "run-secret-audit.py", "ci.ps1", "run-ui-tests.py",
+    "run-onescript-tests.py", "sign-artifacts.ps1", "verify-signatures.ps1",
+    "publish-gitea-release.ps1"
+  ]
+}

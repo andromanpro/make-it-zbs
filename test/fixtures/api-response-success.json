@@ -1,0 +1,21 @@
+{
+  "id": "gen-1234567890abcdef",
+  "model": "anthropic/claude-3.5-sonnet",
+  "object": "chat.completion",
+  "created": 1709654400,
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "function add(a, b) {\n  return a + b;\n}"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 42,
+    "total_tokens": 192
+  }
+}

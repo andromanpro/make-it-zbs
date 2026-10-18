@@ -1,0 +1,22 @@
+title = "Make it ZBS: default secret rules with reviewed synthetic fixtures"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "gitlab-pat"
+[[rules.allowlists]]
+description = "Literal alphabet-only token used to test redaction, never a credential"
+condition = "AND"
+paths = ['''(^|/)test/csharp/SecretRedactorTests\.cs$''']
+regexTarget = "secret"
+regexes = ['''^glpat-abcdefghijklmnopqrst$''']
+
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Validated file SHA-256 entries, not API credentials"
+condition = "AND"
+paths = ['''(^|/)(vendor/onescript/manifest\.json|PUBLIC-SOURCE-MANIFEST\.json)$''']
+regexTarget = "line"
+regexes = ['''^\s*"[^"\r\n]+": "[a-f0-9]{64}",?\s*$''']

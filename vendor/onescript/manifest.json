@@ -1,0 +1,28 @@
+{
+  "upstream": "https://github.com/EvilBeaver/OneScript",
+  "revision": "04d903852c31337391ef47aee821aa8769725170",
+  "version": "1.9.4-zbs.1",
+  "framework": "net472",
+  "zipDependency": "ProDotNetZip 1.20.0",
+  "sha256": "9f282352319eb27dcfc869e8b08721812fa20ec5aa5b8c902d96d914605310d7",
+  "files": {
+    "bin/Newtonsoft.Json.dll": "e1e27af7b07eeedf5ce71a9255f0422816a6fc5849a483c6714e1b472044fa9d",
+    "bin/OneScript.DebugProtocol.dll": "59ac09756426525bd1c4eb4260e1b5e6a63c04977b812e1b1b90a7a3c951a15f",
+    "bin/OneScript.DebugServices.dll": "55707091976cab0a4dac504b950f10b9c9b1aedca0154de0554f3d1dd7043c3c",
+    "bin/OneScript.Language.dll": "93c49aeafa6af30d51b0347fb49a0cdd68dfed0b46846af50fcaef0dbf809c2b",
+    "bin/ProDotNetZip.dll": "aac83bbc63f1b0d362d878b137657a1835d36e6fcba4988a6667b7006568b49d",
+    "bin/ScriptEngine.HostedScript.dll": "93e20f44260a3225f69fbf567aef06a25554a52f33fc293442847352f8165674",
+    "bin/ScriptEngine.dll": "691637fda342d3cf74997df6c408a8cde82b950dad7fca4679850db37fda051b",
+    "bin/System.Buffers.dll": "accccfbe45d9f08ffeed9916e37b33e98c65be012cfff6e7fa7b67210ce1fefb",
+    "bin/System.Memory.dll": "bf3fb84664f4097f1a8a9bc71a51dcf8cf1a905d4080a4d290da1730866e856f",
+    "bin/System.Numerics.Vectors.dll": "1d3ef8698281e7cf7371d1554afef5872b39f96c26da772210a33da041ba1183",
+    "bin/System.Runtime.CompilerServices.Unsafe.dll": "37768488e8ef45729bc7d9a2677633c6450042975bb96516e186da6cb9cd0dcf",
+    "bin/System.Security.AccessControl.dll": "ff14c5f628b9a6798d173aefbba0a43d61e66f715108e2576ac0d3dfab9071d0",
+    "bin/System.Security.Permissions.dll": "006d4d13c4c4c8327b3a94dc502d0e91114c1c495b408f6b78c6b30a3062a14f",
+    "bin/System.Security.Principal.Windows.dll": "b4d8e15adc235d0e858e39b5133e5d00a4baa8c94f4f39e3b5e791b0f9c0c806",
+    "bin/System.Text.Encoding.CodePages.dll": "b77ee852824a6e8098fbade000beb42ce9df32fa4189a00d5e7f472f6c6a5030",
+    "bin/oscript.cfg": "300a56a0bce716227c66b9ee427a1a7dabf655b8bb38d709f81653a364e38c7b",
+    "bin/oscript.exe": "50219d71d5bd779da1707dad2a04555b9bae6e712efe3e482b681ae009a31d93",
+    "bin/oscript.exe.config": "e73d991df27f4a4c2695e11db723fac5405fcdcb4c83a9476a31af77a9f7a216"
+  }
+}

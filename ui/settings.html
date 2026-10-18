@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Настройки Make it ZBS</title>
+    <link rel="stylesheet" href="settings.css">
+    <script defer src="i18n.js"></script>
+    <script defer src="settings-core.js"></script>
+    <script defer src="settings.js"></script>
+</head>
+<body>
+    <main class="settings-shell">
+        <header class="topbar">
+            <div>
+                <div class="eyebrow">Make it ZBS</div>
+                <h1 data-i18n="settings.title">Настройки</h1>
+            </div>
+            <div id="configAlert" class="config-alert" role="alert" hidden></div>
+        </header>
+
+        <nav class="section-nav" aria-label="Разделы настроек" data-i18n-aria-label="settings.sections">
+            <a href="#generalSection" data-i18n="general.title">Общие</a>
+            <a href="#providersSection" data-i18n="providers.title">Провайдеры ИИ</a>
+            <a href="#chatSection" data-i18n="chat.title">Чаты с ИИ</a>
+            <a href="#modelsSection" data-i18n="models.title">Модели</a>
+            <a href="#promptsSection" data-i18n="prompts.title">Промпты</a>
+            <a href="#aboutSection" data-i18n="about.title">Об авторе</a>
+        </nav>
+
+        <section id="generalSection" class="panel">
+            <h2 data-i18n="general.title">Общие</h2>
+            <div class="field-grid">
+                <div class="field">
+                    <label for="hotkeyInput" data-i18n="general.hotkey">Горячая клавиша</label>
+                    <div id="generalHotkeyEditor" class="hotkey-editor">
+                        <div class="hotkey-control">
+                            <input id="hotkeyInput" type="text" autocomplete="off" readonly>
+                            <button id="hotkeyCaptureButton" class="button secondary compact hotkey-capture-button"
+                                type="button" data-i18n="hotkey.change">Изменить</button>
+                        </div>
+                        <span class="hotkey-feedback" aria-live="polite"></span>
+                    </div>
+                </div>
+                <label class="field">
+                    <span data-i18n="general.language">Язык интерфейса</span>
+                    <select id="languageSelect">
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                    </select>
+                </label>
+                <label class="check-field switch-field">
+                    <input id="backgroundInput" type="checkbox">
+                    <span data-i18n="general.background">Фоновый режим</span>
+                </label>
+                <label class="check-field switch-field">
+                    <input id="autostartInput" type="checkbox">
+                    <span data-i18n="general.autostart">Автозапуск Windows</span>
+                </label>
+                <label class="check-field switch-field">
+                    <input id="loggingInput" type="checkbox">
+                    <span data-i18n="general.logging">Технический журнал без содержимого</span>
+                </label>
+                <div>
+                    <button id="openLogsButton" class="button secondary compact" type="button"
+                        data-i18n="general.openLogs">Открыть журнал</button>
+                </div>
+                <label class="field">
+                    <span data-i18n="general.operationFeedback">Индикация работы ИИ</span>
+                    <select id="operationFeedbackSelect">
+                        <option value="both" data-i18n="feedback.both">Иконка и плашка</option>
+                        <option value="icon" data-i18n="feedback.icon">Только иконка</option>
+                        <option value="popup" data-i18n="feedback.popup">Только плашка</option>
+                        <option value="none" data-i18n="feedback.none">Выключено</option>
+                    </select>
+                </label>
+            </div>
+            <div class="provider-separator"></div>
+            <div class="provider-row">
+                <strong>VS Code</strong>
+                <span id="editorAdapterStatus" class="provider-status" data-state="unknown" aria-live="polite"></span>
+                <span class="provider-actions">
+                    <button id="installEditorAdapterButton" class="button primary compact" type="button" data-i18n="editor.connect">Подключить</button>
+                    <button id="checkEditorAdapterButton" class="button secondary compact" type="button" data-i18n="providers.check">Проверить</button>
+                </span>
+            </div>
+        </section>
+
+        <section id="providersSection" class="panel">
+            <h2 data-i18n="providers.title">Провайдеры ИИ</h2>
+            <div class="provider-row">
+                <div>
+                    <strong>Codex</strong>
+                    <div class="hint" data-i18n="providers.codexHint">Использует локальный Codex CLI и подписку ChatGPT. Для подключения установите @openai/codex и выполните codex login.</div>
+                </div>
+                <span id="codexStatus" class="provider-status" data-state="unknown" aria-live="polite">Не проверен</span>
+                <span class="provider-actions">
+                    <button id="useCodexButton" class="button primary compact" type="button" data-i18n="providers.useCodex">Использовать Codex</button>
+                    <button id="checkCodexButton" class="button secondary compact" type="button" data-i18n="providers.check">Проверить</button>
+                </span>
+            </div>
+            <div class="provider-separator"></div>
+            <label class="field">
+                <span data-i18n="providers.openRouterToken">Токен OpenRouter</span>
+                <span class="token-row">
+                    <input id="tokenInput" type="password" autocomplete="off" placeholder="OPENROUTER_API_KEY не задан">
+                    <button id="tokenToggleButton" class="button secondary compact" type="button" data-i18n="common.show">Показать</button>
+                </span>
+            </label>
+        </section>
+
+        <section id="chatSection" class="panel">
+            <h2 data-i18n="chat.title">Чаты с ИИ</h2>
+            <div id="aiProfilesContainer" class="ai-profiles"></div>
+        </section>
+
+        <section id="modelsSection" class="panel">
+            <h2 data-i18n="models.title">Модели по контекстам</h2>
+            <div class="model-header">
+                <span data-i18n="models.context">Контекст</span>
+                <span data-i18n="models.provider">Провайдер</span>
+                <span data-i18n="models.model">Модель</span>
+                <span data-i18n="models.temperature">Температура</span>
+                <span data-i18n="models.maxTokens">Макс. токенов</span>
+            </div>
+            <div id="modelsContainer" class="models-list"></div>
+        </section>
+
+        <section id="promptsSection" class="panel prompt-panel">
+            <div class="section-row">
+                <h2 data-i18n="prompts.title">Промпты</h2>
+                <select id="promptSelect" aria-label="Контекст промпта" data-i18n-aria-label="prompts.context"></select>
+            </div>
+            <div class="prompt-editors">
+                <label class="field">
+                    <span data-i18n="prompts.system">Системный</span>
+                    <textarea id="systemPromptInput" spellcheck="false"></textarea>
+                </label>
+                <label class="field">
+                    <span data-i18n="prompts.user">Пользовательский</span>
+                    <textarea id="userPromptInput" spellcheck="false"></textarea>
+                </label>
+            </div>
+            <div class="hint" data-i18n="prompts.placeholders">Плейсхолдеры: {text} {language}</div>
+        </section>
+
+        <section id="aboutSection" class="panel about-panel">
+            <h2 data-i18n="about.title">Об авторе</h2>
+            <div class="about-row">
+                <div class="about-links" aria-label="Ссылки автора" data-i18n-aria-label="about.links">
+                    <button id="authorWebsiteButton" class="author-link" type="button"
+                        data-label="androman.pro"
+                        data-i18n-aria-label="about.openWebsite">androman.pro</button>
+                    <button id="authorTelegramButton" class="author-link" type="button"
+                        data-label="Telegram @andromanpro"
+                        data-i18n-aria-label="about.openTelegram">Telegram @andromanpro</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <button id="openConfigButton" class="button secondary" type="button" data-i18n="common.openConfig">Открыть папку конфигов</button>
+        <span class="footer-spacer"></span>
+        <span class="footer-actions">
+            <button id="cancelButton" class="button secondary" type="button" data-i18n="common.cancel">Отмена</button>
+            <button id="saveButton" class="button primary" type="button" data-i18n="common.save">Сохранить</button>
+        </span>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>ZBSWindowsComponent</AssemblyName>
+    <RootNamespace>ZBSWindowsComponent</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <PathMap>$(MSBuildProjectDirectory)=/_/src/ZBSWindowsComponent</PathMap>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1903;NU1904</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3967.48" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.19041.1" />
+    <PackageReference Include="MakeItZBS.OneScript" Version="1.9.4-zbs.1" />
+    <PackageReference Include="MakeItZBS.OneScript.StandardLibrary" Version="1.9.4-zbs.1" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Security" />
+    <ProjectReference Include="../ProcessHost/MakeItZBS.ProcessHost.csproj" />
+    <ProjectReference Include="../CaptureHost/MakeItZBS.CaptureHost.csproj" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Launcher\app.ico" Link="app.ico" LogicalName="ZBSWindowsComponent.app.ico" />
+    <EmbeddedResource Include="..\..\artifacts\adapters\make-it-zbs-editor.vsix" LogicalName="ZBSWindowsComponent.vscode.vsix" />
+  </ItemGroup>
+
+  <Target Name="BuildVsCodeAdapter" BeforeTargets="PrepareForBuild">
+    <Exec Command="$(ZbsPythonCommand) &quot;$(MSBuildProjectDirectory)\..\..\tools\build-vscode.py&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <!-- Keep web UI and build scripts inside the .NET Sonar analysis scope. -->
+    <None Include="..\..\ui\**\*.js" Link="ui\%(RecursiveDir)%(Filename)%(Extension)" />
+    <None Include="..\..\ui\**\*.html" Link="ui\%(RecursiveDir)%(Filename)%(Extension)" />
+    <None Include="..\..\ui\**\*.css" Link="ui\%(RecursiveDir)%(Filename)%(Extension)" />
+    <None Include="..\..\tools\*.py" Link="tools\%(Filename)%(Extension)" />
+    <None Include="..\..\integrations\vscode\*.js" Link="integrations\vscode\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

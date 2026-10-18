@@ -1,0 +1,65 @@
+# ===========================================
+# Make it ZBS - Git Ignore
+# ===========================================
+
+# API Keys
+config/.env
+config/.settings-transaction.json*
+config/settings.json.v*.bak
+
+# Logs
+logs/*.log
+logs/*.json
+
+# Replace-in-place backups (Phase 4) — runtime safety copies, never tracked
+logs/backups/
+
+# Image→image results (Phase 6) — runtime generated images, never tracked
+logs/images/
+
+# Temporary files
+temp/*
+!temp/.gitkeep
+
+# Build artifacts
+lib/*.dll
+lib/*.pdb
+**/bin/
+**/obj/
+node_modules/
+artifacts/
+.sonarqube/
+.scannerwork/
+__pycache__/
+*.py[cod]
+.coverage
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Windows reserved-name junk (from stray `> nul` redirects)
+nul
+
+# Agent / MCP tooling artifacts (not part of the project)
+.claude/
+.serena/
+*.log
+
+# OneScript
+*.ospx
+packagedef
+
+# Портируемый дистрибутив (Phase 9) — артефакт сборки, бандлит
+# сторонний oscript-рантайм; собирается tools/build-dist.py
+dist/
+local-app/

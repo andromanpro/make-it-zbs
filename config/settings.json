@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "general": {
+    "hotkey": "Ctrl+F12",
+    "language": "ru",
+    "codexOfferShown": false,
+    "debug": false
+  },
+  "textSource": {
+    "priority": "selection",
+    "comment": "selection - пытаться получить выделенный текст, clipboard - только из буфера обмена"
+  },
+  "aiChat": {
+    "profiles": {
+      "codex": {
+        "label": "Codex / ChatGPT",
+        "enabled": true,
+        "processes": [
+          "codex.exe",
+          "chatgpt.exe"
+        ],
+        "hotkey": "Ctrl+F12",
+        "mode": "continue",
+        "continueText": "Давай дальше.",
+        "sendMode": "submit",
+        "analysisSource": "localText"
+      },
+      "claude": {
+        "label": "Claude",
+        "enabled": true,
+        "processes": [
+          "claude.exe"
+        ],
+        "hotkey": "Ctrl+F12",
+        "mode": "continue",
+        "continueText": "Давай дальше.",
+        "sendMode": "submit",
+        "analysisSource": "localText"
+      },
+      "opencode": {
+        "label": "OpenCode",
+        "enabled": true,
+        "processes": [
+          "opencode.exe"
+        ],
+        "hotkey": "Ctrl+F12",
+        "mode": "continue",
+        "continueText": "Давай дальше.",
+        "sendMode": "submit",
+        "analysisSource": "localText"
+      }
+    }
+  },
+  "preview": {
+    "showPreview": true,
+    "stream": true,
+    "timeout": 30
+  },
+  "logging": {
+    "enabled": false,
+    "maxLogFiles": 10,
+    "logRequests": false,
+    "logResponses": false
+  }
+}

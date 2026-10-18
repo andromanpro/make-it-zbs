@@ -1,0 +1,8 @@
+# Исторически в репозитории смешаны LF и CRLF. CR перед LF не считается
+# trailing whitespace, но реальные пробелы в конце строк по-прежнему ловятся.
+* whitespace=trailing-space,space-before-tab,cr-at-eol
+
+*.cs text eol=lf
+*.csproj text eol=lf
+*.props text eol=lf
+*.targets text eol=lf

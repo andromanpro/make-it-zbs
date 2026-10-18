@@ -1,0 +1,47 @@
+diff --git a/src/ScriptEngine.HostedScript/Library/Zip/ZipReader.cs b/src/ScriptEngine.HostedScript/Library/Zip/ZipReader.cs
+--- a/src/ScriptEngine.HostedScript/Library/Zip/ZipReader.cs
++++ b/src/ScriptEngine.HostedScript/Library/Zip/ZipReader.cs
+@@ -91,6 +91,8 @@ namespace ScriptEngine.HostedScript.Library.Zip
+         public void ExtractAll(string where, SelfAwareEnumValue<ZipRestoreFilePathsModeEnum> restorePaths = null)
+         {
+             CheckIfOpened();
++            foreach (var entry in _zip.Entries)
++                ValidateDestination(where, entry.FileName);
+             _zip.FlattenFoldersOnExtract = FlattenPathsOnExtraction(restorePaths);
+             _zip.ExtractExistingFile = ExtractExistingFileAction.OverwriteSilently;
+             _zip.ExtractAll(where);
+@@ -113,12 +115,33 @@ namespace ScriptEngine.HostedScript.Library.Zip
+             _zip.FlattenFoldersOnExtract = FlattenPathsOnExtraction(restorePaths);
+             realEntry.Password = password;
+ 
+-            using (FileStream streamToExtract = new FileStream(Path.Combine(destination, entry.Name), FileMode.Create))
++            using (FileStream streamToExtract = new FileStream(ValidateDestination(destination, entry.Name), FileMode.Create))
+             {
+                 realEntry.Extract(streamToExtract);
+             }
+         }
+ 
++        private static string ValidateDestination(string directory, string name)
++        {
++            var root = Path.GetFullPath(directory).TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)
++                + Path.DirectorySeparatorChar;
++            var relative = name.Replace('/', Path.DirectorySeparatorChar);
++            if (Path.IsPathRooted(relative) || relative.IndexOf(':') >= 0)
++                throw new IOException("Archive entry must have a relative file path.");
++            var target = Path.GetFullPath(Path.Combine(root, relative));
++            if (!target.StartsWith(root, StringComparison.OrdinalIgnoreCase))
++                throw new IOException("Archive entry escapes its extraction directory.");
++            // Existing links below the destination must not redirect an otherwise valid path.
++            for (var current = target; current != null && current.StartsWith(root, StringComparison.OrdinalIgnoreCase);
++                 current = Path.GetDirectoryName(current))
++            {
++                if ((File.Exists(current) || Directory.Exists(current))
++                    && (File.GetAttributes(current) & FileAttributes.ReparsePoint) != 0)
++                    throw new IOException("Archive entry traverses a filesystem link.");
++            }
++            return target;
++        }
++
+         /// <summary>
+         /// Закрыть архив и освободить объект.
+         /// </summary>
