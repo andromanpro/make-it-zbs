@@ -74,7 +74,7 @@ for inspection only, never a public release.
 
 The source ZIP includes its workers, locked NuGet metadata, SDK pin, engine
 source/license and dependency notices. Install .NET SDK `10.0.103`, set
-`DOTNET_CLI_UI_LANGUAGE=ru-RU`, then run `dotnet build -c Release
+`DOTNET_CLI_UI_LANGUAGE=ru-RU` and `DOTNET_ROLL_FORWARD=Disable`, then run `dotnet build -c Release
 OneScript.Automation.csproj -p:RestoreLockedMode=true`. NuGet access/cache is
 required for dependencies not included in the local `vendor/nuget` feed.
 

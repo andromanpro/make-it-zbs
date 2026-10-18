@@ -16,6 +16,7 @@ defaults:
 env:
   ZbsPythonCommand: python
   DOTNET_CLI_UI_LANGUAGE: ru-RU
+  DOTNET_ROLL_FORWARD: Disable
 
 jobs:
   verify:

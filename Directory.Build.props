@@ -6,6 +6,7 @@
     <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
     <!-- Source archive/manifest is the provenance; private and public Git URLs must not change DLLs. -->
     <EnableSourceLink>false</EnableSourceLink>
+    <UseSharedCompilation>false</UseSharedCompilation>
   </PropertyGroup>
   <ItemGroup>
     <!-- All projects target net472; use the same references with or without a developer pack. -->

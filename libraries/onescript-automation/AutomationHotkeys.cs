@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -126,7 +127,11 @@ namespace OneScript.Automation
                     Application.ExitThread();
                 }));
             }
-            if (!_thread.Join(5000)) throw new TimeoutException("Hotkey window shutdown timed out.");
+            if (!_thread.Join(5000))
+            {
+                Trace.TraceWarning("Hotkey window shutdown timed out after unregistering the key.");
+                return;
+            }
             _ready.Dispose();
         }
 
@@ -135,10 +140,10 @@ namespace OneScript.Automation
             private readonly AutomationHotkeys _owner;
             internal HiddenWindow(AutomationHotkeys owner) { _owner = owner; ShowInTaskbar = false; }
             protected override void SetVisibleCore(bool value) => base.SetVisibleCore(false);
-            protected override void WndProc(ref Message message)
+            protected override void WndProc(ref Message m)
             {
-                if (message.Msg == NativeMethods.WM_HOTKEY) _owner.OnPressed(message.WParam.ToInt32());
-                base.WndProc(ref message);
+                if (m.Msg == NativeMethods.WM_HOTKEY) _owner.OnPressed(m.WParam.ToInt32());
+                base.WndProc(ref m);
             }
         }
     }

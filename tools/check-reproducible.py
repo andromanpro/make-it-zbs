@@ -60,7 +60,7 @@ def main():
     sdk = subprocess.check_output(["dotnet", "--version"], cwd=ROOT, text=True).strip()
 
     def build(revision):
-        environment = dict(os.environ, DOTNET_CLI_UI_LANGUAGE="ru-RU")
+        environment = dict(os.environ, DOTNET_CLI_UI_LANGUAGE="ru-RU", DOTNET_ROLL_FORWARD="Disable")
         subprocess.run(["dotnet", "build", "-c", "Release", "src/ZBSWindowsComponent/ZBSWindowsComponent.csproj",
                         "--no-incremental", f"-p:SourceRevisionId={revision}"], cwd=ROOT, check=True, env=environment)
 

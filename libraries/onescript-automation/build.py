@@ -13,6 +13,8 @@ PROJECT = Path(__file__).resolve().parent
 ROOT = PROJECT.parents[1]
 VERSION = "0.1.0-beta.1"
 PROJECT_FILE = "OneScript.Automation.csproj"
+README_FILE = "README.md"
+LICENSE_DIRECTORY = "vendor/licenses"
 CORE_FILES = ("NativeMethods.cs", "Helpers/KeyConverter.cs", "OwnedProcessRunner.cs", "OperationControl.cs",
               "TemporaryFileStore.cs", "DesktopCaptureClient.cs", "CodexCliClient.cs", "SecretRedactor.cs",
               "OpenRouterHttpTransport.cs", "AiClientProfiles.cs")
@@ -21,18 +23,22 @@ package = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(package)
 
 
+def copy_worker_sources(destination):
+    for worker in ("CaptureHost", "ProcessHost"):
+        for source in (ROOT / "src" / worker).iterdir():
+            if source.is_file() and source.suffix in (".cs", ".csproj", ".json", ".config", ".txt"):
+                package.copy(source, destination / "workers" / worker / source.name)
+
+
 def source_tree(destination):
-    for name in (PROJECT_FILE, "packages.lock.json", "README.md"):
+    for name in (PROJECT_FILE, "packages.lock.json", README_FILE):
         package.copy(PROJECT / name, destination / name)
     for source in PROJECT.glob("Automation*.cs"):
         package.copy(source, destination / source.name)
     for name in CORE_FILES:
         package.copy(ROOT / "src/ZBSWindowsComponent" / name, destination / "core" / name)
     package.copy(ROOT / "src/CaptureHost/CaptureEngine.cs", destination / "capture/CaptureEngine.cs")
-    for worker in ("CaptureHost", "ProcessHost"):
-        for source in (ROOT / "src" / worker).iterdir():
-            if source.is_file() and source.suffix in (".cs", ".csproj", ".json", ".config", ".txt"):
-                package.copy(source, destination / "workers" / worker / source.name)
+    copy_worker_sources(destination)
     for name in ("LICENSE", "global.json", "Directory.Build.props", "NuGet.Config"):
         package.copy(ROOT / name, destination / name)
     for source in (ROOT / "vendor/nuget").glob("*.nupkg"):
@@ -40,7 +46,7 @@ def source_tree(destination):
     for source in (ROOT / "vendor/onescript").iterdir():
         if source.is_file() and source.name != "runtime.zip":
             package.copy(source, destination / "vendor/onescript" / source.name)
-    shutil.copytree(ROOT / "vendor/licenses", destination / "vendor/licenses")
+    shutil.copytree(ROOT / LICENSE_DIRECTORY, destination / LICENSE_DIRECTORY)
     for source in (PROJECT / "examples").glob("*.os"):
         package.copy(source, destination / "examples" / source.name)
 
@@ -84,9 +90,9 @@ def main():
         binary = Path(temporary) / "binary"
         for name in inventory:
             package.copy(built / name, binary / name)
-        package.copy(PROJECT / "README.md", binary / "README.md")
+        package.copy(PROJECT / README_FILE, binary / README_FILE)
         package.copy(ROOT / "LICENSE", binary / "LICENSE")
-        shutil.copytree(ROOT / "vendor/licenses", binary / "licenses")
+        shutil.copytree(ROOT / LICENSE_DIRECTORY, binary / "licenses")
         shutil.copytree(PROJECT / "examples", binary / "examples")
         binary_archive = package.archive(binary, releases / f"OneScript.Automation-v{VERSION}-binary.zip", info)
     receipt = dict(info, source=source_archive, binary=binary_archive, status="passed", evidence=str(output))

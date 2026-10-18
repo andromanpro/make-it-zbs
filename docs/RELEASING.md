@@ -13,6 +13,10 @@ the executable logic is identical. `tools/ci.ps1` sets this environment variable
 SourceLink is disabled: switching from a private Gitea remote to GitHub otherwise
 embeds different repository URLs in the PDB and changes the DLL checksum.
 Source archives, commit provenance and per-file manifests remain available.
+The compiler host is pinned as well: `DOTNET_ROLL_FORWARD=Disable` and disabled
+shared compilation keep SDK 10.0.103 on its bundled .NET 10.0.3 runtime, rather
+than a newer installed patch. Roslyn records that host version in the PDB.
+This does not change the application's net472 target or its .NET Framework host.
 
 1. Freeze a reviewed commit with current component/helper binaries and license
    inventory. The working tree must be clean. Use the SDK in `global.json` and

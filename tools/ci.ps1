@@ -8,6 +8,7 @@ param(
 $ErrorActionPreference = "Stop"
 # WriteCodeFragment emits a localized source comment included in the PDB checksum.
 $env:DOTNET_CLI_UI_LANGUAGE = "ru-RU"
+$env:DOTNET_ROLL_FORWARD = "Disable"
 $root = Split-Path -Parent $PSScriptRoot
 $pythonSources = "tools,libraries/onescript-windows,libraries/onescript-automation"
 Set-Location $root
