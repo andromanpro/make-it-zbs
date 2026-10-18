@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "cb5e1a8b0ca3da46f60c74196da8ef8204a827be",
+  "sourceCommit": "a2bb6ea3a18b187cb3e222432c2e6c6a3226055a",
   "dirty": false,
   "historyIncluded": false,
   "files": {
@@ -12,7 +12,7 @@
     ".gitleaks.toml": "ec527a85633d587ee8e75eb26e45fa2a683022cce9af7c6a0a089be15e309ff1",
     "CHANGELOG.md": "82308a51cb7db6c4c159791e699d38c2ced8142d6ee112affd0ed03b70c900c9",
     "CONTRIBUTING.md": "bb679b9df0cf215066462165dc78d7eb087c5d0b255e51c332450883f14fd022",
-    "Directory.Build.props": "45510f6e0c7f6c15b98da9b1c4fb89b56749a9b3fe401b381bdf849ae79e21f4",
+    "Directory.Build.props": "9b200f19992056254e78e35b7ab22fdc1fe7755bac560a0a557ea336c1f2f9ec",
     "INSTALL.md": "b6534d844fd4f1e43888232cd8409582c30fb9d658e9c0fb8c938b06cc1d07e4",
     "LICENSE": "48de06960f149050161eb15ce24a0d24eb2238c7d96c7bba065bd6e91bd9b931",
     "Make-it-ZBS.bat": "858aa429cdb05726a22a8c262c1c3b63e9fb7ea5adb0cfb2c5c0cd13f51a2a09",
@@ -28,7 +28,7 @@
     "config/prompts.json": "dc5107b87aa3b61fcbb4520ff96c9e74bd4ee4cd90ab01e6f480c0993238cabe",
     "config/public-source.json": "a8c9936eb8916e93ad233b93da06bcc8897ad9a5deaf9da6406a9191babc7325",
     "config/settings.json": "3dd8899dcf7f1d6d6108de4dbc8a863b3d8167cf637e852f06a029f1b5c0560b",
-    "docs/RELEASING.md": "6edd228c19621b99c6a1b0cd094e99122f70434b4a52afb07f8af6dda8e31952",
+    "docs/RELEASING.md": "62bd47f9b1ad3ad5554026925efe5001f7e41a3eabddb81a5a10c221891c5190",
     "docs/USER-GUIDE.md": "6f1c256ade7639cab805709dc7a17e82b08ed18504b60cba3aacf58ced85f86d",
     "docs/images/guide-paint.png": "f8a1462269e2bd368baafb78d36165cb7161daac4826cc7ef0c18c8555be0d38",
     "docs/images/guide-settings.png": "2494e5ce5131267aeb1b8bba28ff27c0c757d487890167635e43212e5c6abb93",

@@ -4,6 +4,8 @@
     <RestoreLockedMode Condition="'$(CI)' == 'true'">true</RestoreLockedMode>
     <ZbsPythonCommand Condition="'$(ZbsPythonCommand)' == ''">py -3.14</ZbsPythonCommand>
     <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <!-- Source archive/manifest is the provenance; private and public Git URLs must not change DLLs. -->
+    <EnableSourceLink>false</EnableSourceLink>
   </PropertyGroup>
   <ItemGroup>
     <!-- All projects target net472; use the same references with or without a developer pack. -->

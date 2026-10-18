@@ -10,6 +10,9 @@ Build locale is pinned to `DOTNET_CLI_UI_LANGUAGE=ru-RU`, including independent
 source-package builds. MSBuild's generated AssemblyInfo includes a localized
 comment in its PDB checksum; an unpinned locale changes binary hashes even when
 the executable logic is identical. `tools/ci.ps1` sets this environment variable.
+SourceLink is disabled: switching from a private Gitea remote to GitHub otherwise
+embeds different repository URLs in the PDB and changes the DLL checksum.
+Source archives, commit provenance and per-file manifests remain available.
 
 1. Freeze a reviewed commit with current component/helper binaries and license
    inventory. The working tree must be clean. Use the SDK in `global.json` and
