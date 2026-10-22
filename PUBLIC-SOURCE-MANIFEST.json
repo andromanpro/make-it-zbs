@@ -7,6 +7,7 @@
     ".config/dotnet-tools.json": "302f54d296851518985615e68a58aa4fe1bd6cbd71b6e02b0757de40d26923f6",
     ".gitattributes": "70857b15880cfd0f2aea9e11e9a1049401332492e15212ff08102055ef9c1ca4",
     ".github/ISSUE_TEMPLATE/bug_report.md": "1ee6fc5dff8fbb73173780bd096ddacff5792aa4c1ed85e73264d5dce1a109c8",
+    ".github/dependabot.yml": "9d5d40d645b0c329964fca8836209abce4909ad515385bd9d170af5f1635d3bf",
     ".github/workflows/ci.yml": "c6967c7c965c5008159a3ad2c20601f206b7c01b0d0911d0f22aa4635be09e49",
     ".gitignore": "9bedf5f3d2777114c6231e130cd372d6e6b5c42521da7fae480433c180f9cd51",
     ".gitleaks.toml": "ec527a85633d587ee8e75eb26e45fa2a683022cce9af7c6a0a089be15e309ff1",
@@ -14,7 +15,7 @@
     "CONTRIBUTING.md": "bb679b9df0cf215066462165dc78d7eb087c5d0b255e51c332450883f14fd022",
     "Directory.Build.props": "c7e473d78f7829c46a138df4cb808c959391e1c98b6e69a59291dd5827574a45",
     "INSTALL.md": "b6534d844fd4f1e43888232cd8409582c30fb9d658e9c0fb8c938b06cc1d07e4",
-    "LICENSE": "48de06960f149050161eb15ce24a0d24eb2238c7d96c7bba065bd6e91bd9b931",
+    "LICENSE": "b437a86a35c387a4f75827c6c95b6de18725c40ff1aab48c99b4c0e76f50c77b",
     "Make-it-ZBS.bat": "858aa429cdb05726a22a8c262c1c3b63e9fb7ea5adb0cfb2c5c0cd13f51a2a09",
     "NuGet.Config": "d059b8c2a3f58ffe4f4c11183501ce557a11ea171881d7c57aa90e89f9dd1435",
     "PRIVACY.md": "e5cae86c4725dbf4cc15312d15e89ebab709922594a0a119c580754d1bbb387b",
@@ -364,5 +365,13 @@
     "vendor/onescript/runtime.zip": "9f282352319eb27dcfc869e8b08721812fa20ec5aa5b8c902d96d914605310d7",
     "vendor/onescript/security.patch": "6233c56715dc9684e82e42cc1f4cf887ec729064b5f531f4a515877e03757302",
     "vendor/onescript/source.zip": "8fa52b07ee3c2a82874358e3a151eb12fa565e5cb1fa7c9a17e79ada48d658b8"
+  },
+  "publicMaintenance": {
+    "basePublicCommit": "88f93e9e82e12cb24683e59e63a1d8ec83568c59",
+    "changedFiles": [
+      "LICENSE",
+      ".github/dependabot.yml"
+    ],
+    "note": "Public documentation and dependency-maintenance updates after the original clean source export; sourceCommit retains the original export provenance."
   }
 }
